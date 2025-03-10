@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import './login.js'
+import Login from './login.js';
+import MainPage from './mainpage/mainpage';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import RegistrationForm from './registrationform/registrationform';
+import PasswordReset from './Resetpass/passwordreset';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Login/> */}
+      {/* <MainPage/> */}
+      {/* <RegistrationForm/> */}
+      {/* <PasswordReset/> */}
+      <Router basename="/v2/app_react">
+            <Routes>
+                <Route path="/static" element={<Login />} />
+                <Route path="/mainpage" element={<MainPage />} />
+                <Route path="/register" element={<RegistrationForm />} />
+                <Route path="/reset-password" element={<PasswordReset/>} />
+            </Routes>
+        </Router>
     </div>
   );
 }

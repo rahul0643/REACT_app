@@ -1,0 +1,101 @@
+body {
+    background: linear-gradient(to bottom, #eef3f7, white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .login-box {
+    background-color: #e3f2fd;
+    padding: 20px;
+    border: 1px solid #9ec4e5;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .login-header {
+    position: absolute;
+    top: -12px;
+    left: 10px;
+    background-color: #0074b7;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 3px;
+  }
+  
+  .input-group {
+    margin: 15px 0;
+    text-align: left;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    width: 30%; /* Adjust width as needed */
+  text-align: left;
+  
+  }
+  
+  .input-group input {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fffacd;
+    float: right;
+    margin-left: 20px;
+  }
+
+  
+  .button-group {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+  
+  .button-group button {
+    padding: 8px 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+  
+  button[type="submit"] {
+    background-color: #0074b7;
+  }
+  
+  .cancel-button {
+    background-color: #005080;
+  }
+  
+  .forgot-password {
+    margin-top: 10px;
+  }
+  
+  .forgot-password a {
+    color: #6a0dad;
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  

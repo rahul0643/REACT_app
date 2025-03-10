@@ -1,0 +1,146 @@
+/* Full Page Layout */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+/* Top Bar */
+.top-bar {
+    background: #1b74b2;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* Sidebar (Hidden by Default) */
+.sidebar {
+    width: 250px;
+    background: #e6f0fa;
+    position: fixed;
+    left: -250px; /* Initially hidden */
+    top: 50px;
+    margin-top: 20px;
+    bottom: 0;
+    padding: 10px;
+    transition: left 0.3s ease;
+}
+
+/* Sidebar Open */
+.sidebar.open {
+    left: 0; /* Slide into view */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    background: #1b74b2;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Sidebar Menu Items */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.menu li {
+    padding: 10px;
+    background: white;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.menu li:hover {
+    background: #d1e7ff;
+}
+
+/* Main Content */
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 0; /* No margin when sidebar is closed */
+    transition: margin-left 0.3s ease;
+}
+
+/* Shift Content When Sidebar Opens */
+.content.shift {
+    margin-left: 250px; /* Push content when sidebar opens */
+}
+
+/* Footer */
+footer {
+    background: #1b74b2;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Logoff Button */
+button {
+    padding: 8px 15px;
+    border: none;
+    color: white;
+    background: red;
+    cursor: pointer;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+    background: #e6f0fa;
+    transition: background 0.3s;
+}
+
+.menu li:hover {
+    background: #d1e7ff;
+}
+
+/* Submenus */
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+    display: block;
+}
+
+.submenu li {
+    padding: 8px;
+    background: #f0f8ff;
+}
+
+.submenu li:hover {
+    background: #cde4ff;
+}
+
+/* Nested Submenus */
+.nested {
+    padding-left: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}

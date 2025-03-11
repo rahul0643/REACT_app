@@ -16,7 +16,7 @@ function App() {
       {/* <PasswordReset/> */}
       <Router >
             <Routes>
-                <Route path="/static" element={<Login />} />
+                <Route path="/" element={<Login />} />
                 <Route path="/mainpage" element={<MainPage />} />
                 <Route path="/register" element={<RegistrationForm />} />
                 <Route path="/reset-password" element={<PasswordReset/>} />

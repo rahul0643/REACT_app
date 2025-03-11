@@ -2,7 +2,7 @@
   "name": "loginpage",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rahul0643.github.io/REACT_app",
+  "homepage": "https://rahul0643.github.io/REACT_app/",
   
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

@@ -14,7 +14,7 @@ function App() {
       {/* <MainPage/> */}
       {/* <RegistrationForm/> */}
       {/* <PasswordReset/> */}
-      <Router basename="/v2/app_react">
+      <Router >
             <Routes>
                 <Route path="/static" element={<Login />} />
                 <Route path="/mainpage" element={<MainPage />} />

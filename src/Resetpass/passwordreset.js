@@ -10,6 +10,7 @@ const PasswordReset = () => {
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
 
   const navigate = useNavigate();
   const exitform=()=>{
@@ -35,23 +36,53 @@ const PasswordReset = () => {
     return ""; // No error
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationError = validatePassword(newPassword);
-    
+
     if (validationError) {
       setError(validationError);
+      setSuccess("");
       return;
     }
 
     if (newPassword !== confirmPassword) {
       setError("New password and Confirm password must match.");
+      setSuccess("");
       return;
     }
 
-    setError("");
-    alert("Password reset successful!"); // Replace with API call
+    try {
+      const response = await fetch("http://localhost:8182/v2/reset-password", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          oldPassword,
+          newPassword,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess(data.message);
+        setError("");
+      } else {
+        setError(data.message);
+        setSuccess("");
+      }
+    } catch (error) {
+      setError("Server error. Please try again later.");
+      setSuccess("");
+    }
   };
+
+    
+
+    
 
   return (
     <div className="container">
@@ -103,6 +134,7 @@ const PasswordReset = () => {
         </div>
 
         {error && <p className="error">{error}</p>}
+        {success && <p className="success">{success}</p>}
 
         <div className="buttons">
           <button type="submit">Ok</button>

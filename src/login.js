@@ -55,7 +55,8 @@ const handleSubmit = async (e) => {
 
         console.log(result);
         console.log(userid);
-        navigate(result.redirect,{ state: { username: data.username } });
+        console.log("formData.username----",formData.username);
+        navigate(result.redirect,{ state: { username: formData.username } });
       } else {
         alert("Login Failed!");
         console.error("Error:", result);

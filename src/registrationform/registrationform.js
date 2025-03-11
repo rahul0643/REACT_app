@@ -173,7 +173,8 @@ const RegistrationForm = () => {
             placeholder="Enter branch code"
           />
           {/* <button type="button" onClick={openDialog}>Select Branch</button> */}
-          <input type="text"   name="branchName" value={formData.branchName} onChange={handleChange} disabled/>
+          
+          <input type="text"    name="branchName" value={formData.branchName} onChange={handleChange} disabled/>
         </div>
 
         {isDialogOpen && (
@@ -203,7 +204,7 @@ const RegistrationForm = () => {
 
         <div className="form-group">
           <label>Name:</label>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} />
+          <input type="text"  name="name" value={formData.name} onChange={handleChange} />
         </div>
 
         <div className="form-group">
@@ -272,12 +273,12 @@ const RegistrationForm = () => {
           <input type="date" name="expiryDate" value={formData.expiryDate} onChange={handleChange} />
         </div>
 
-        <div className="form-group checkbox-group">
+        {/* <div className="form-group checkbox-group">
           <input type="checkbox" name="hoOfficer" checked={formData.hoOfficer} onChange={handleChange} />
           <label>HO Officer</label>
           <input type="checkbox" name="mobileUser" checked={formData.mobileUser} onChange={handleChange} />
           <label>Mobile Appl. User</label>
-        </div>
+        </div> */}
 
         <div className="form-actions">
           <button type="submit">Save</button>

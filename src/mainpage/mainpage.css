@@ -19,6 +19,10 @@
     box-sizing: border-box;
 }
 
+marquee{
+    width:70%;
+    font-size: 30px;
+}
 /* Sidebar (Hidden by Default) */
 .sidebar {
     width: 250px;

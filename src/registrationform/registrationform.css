@@ -1,6 +1,6 @@
 .form-container {
-  max-width: 95%; 
-  width: 600px;
+  width: 90%; 
+  width: 900px;
   margin: 50px auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -23,23 +23,44 @@
 
 .form-group {
   display: flex;
-  align-items: left;
-  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for responsive design */
   margin-bottom: 10px;
+  align-items: center; /* Center align items vertically */
 }
 
 label {
   font-weight: bold;
-  min-width: 30%; /* Adjust label width for alignment */
+  width: 120px; /* Fixed width for labels */
+  margin-right: 10px; /* Add some space between label and input */
+  text-align: right; /* Right-align the labels */
 }
 
 input, select, textarea {
-  flex-grow: 1;
-  width: 70%;
-  padding: 2px;
+  flex: 1; /* Take up the remaining space */
+  min-width: 200px; /* Minimum width for inputs */
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 3px;
-  align-items: left;
+}
+
+/* For the two-column fields (like City and Telephone) */
+.form-group:has(input[name="city"]), 
+.form-group:has(input[name="username"]) {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+ input:focus{
+  background-color: rgb(245, 245, 207);
+}
+
+
+.form-group:has(input[name="city"]) label:nth-of-type(2),
+.form-group:has(input[name="username"]) label:nth-of-type(2) {
+  width: auto;
+  text-align: right;
+  margin-left: 10px;
 }
 
 textarea {
@@ -74,6 +95,8 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+/* Rest of your CSS remains unchanged */
 
 .dialog-overlay {
   position: fixed;
@@ -110,4 +133,87 @@ button:hover {
 
 .dialog-box tr:hover {
   background-color: #f1f1f1;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Styling for pagination buttons */
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Disabled button styles */
+.pagination button:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+
+button:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+/* Styling for the page number text */
+.pagination span {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 8px;
+}
+
+/* Search dialog styles */
+.search-dialog {
+  width: 400px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-form-group label {
+  width: 100px;
+  text-align: right;
+}
+
+.search-form-group input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-help-button {
+  border-radius: 4px;
+  width: 30px;
+  height: 30px;
+}
+
+.search-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.search-buttons button {
+  padding: 8px 16px;
+  cursor: pointer;
 }

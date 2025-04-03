@@ -1,0 +1,82 @@
+.form-container_vndr {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background: #eaf4ff;
+  }
+
+ 
+  .form-header_vndr {
+    position: absolute;
+    top: 60px;
+    left: 575px;
+    background-color: #0074B7;
+    color: #fff;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    width: 115px; /* Fixed width for labels */
+    text-align: right;
+    margin-right: 10px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    padding: 0 10px;
+  }
+
+  .form-group input {
+    flex: 1; /* Takes up remaining space */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    width: 100px;
+    padding: 10px;
+    background: #0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .submit-btn:hover {
+    background: #0056b3;
+  }
+  
+  .input-error {
+    border: 1px solid red !important;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }

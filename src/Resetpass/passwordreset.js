@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./passwordreset.css";
 import { useLocation } from "react-router-dom";
 
+// http://localhost:8182/loginv2-0.0.1-SNAPSHOT/v2
+
+const API_BASE_URL = window.runtimeConfig?.API_BASE_URL || "/v2";
+
 
 const PasswordReset = () => {
 //   const [userId, setUserId] = useState("RBB");
@@ -14,7 +18,7 @@ const PasswordReset = () => {
 
   const navigate = useNavigate();
   const exitform=()=>{
-    navigate("/static");
+    navigate("/root");
   }
 
   const location = useLocation();
@@ -53,7 +57,7 @@ const PasswordReset = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8182/v2/reset-password", {
+      const response = await fetch(`${API_BASE_URL}/reset-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

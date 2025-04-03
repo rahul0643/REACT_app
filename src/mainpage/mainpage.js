@@ -35,7 +35,7 @@ const MainPage = () => {
   const handleLogoff = () => {
     alert("Logging out...");
     // Redirect to login page logic here
-    navigate("/static");
+    navigate("/");
     
   };
 
@@ -46,7 +46,7 @@ const MainPage = () => {
         <div className="hamburger-menu" onClick={toggleMenu}>
         ☰ Menu
       </div>
-      <span>ASHTAVINAYAK NAGRI SAHKARI PAT SANSTHA MAR. BENODA,HO</span>
+      <h3>ASHTAVINAYAK NAGRI SAHKARI PAT SANSTHA MAR. BENODA,HO</h3>
       <span>{currentDate}</span>
       <button style={{background:'black'}} onClick={handleLogoff}>Logoff</button>
     </div>
@@ -60,7 +60,9 @@ const MainPage = () => {
             {openSubMenu === "masters" && (
               <ul className="submenu">
                 <li><Link to="/register">User Master Entry</Link></li>
-                <li><a href="/form2">Form 2</a></li>
+                <li><Link to="/cbs-reg">CBS Registration </Link></li>
+                <li><Link to="/vendor-reg">Vendor Registration </Link></li>
+                <li><Link to="/api-manager">API Management Form </Link></li>
               </ul>
             )}
           </li>

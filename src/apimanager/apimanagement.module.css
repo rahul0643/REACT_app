@@ -1,0 +1,305 @@
+.apiManagementContainer {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    background: #eaf4ff;
+    position: relative;
+  }
+  
+  .pageTitle {
+    /* text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    line-height: 1.2; */
+
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    background-color: #0074B7;
+    color: #fff;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .dropdownSection {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .dropdownWrapper {
+    flex: 1;
+  }
+  
+  .select {
+    width: 65%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    align-items: center;
+  }
+  
+  /* Grid Styles */
+  .apiGrid {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .apiGridHeader {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 0.8fr 0.8fr;
+    background-color: #f5f5f5;
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .apiGridHeader div {
+    padding: 0 10px;
+  }
+  
+  .apiGridRow {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 0.8fr 0.8fr;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease;
+    align-items: center;
+  }
+  
+  .apiGridRow:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .apiGridRow:last-child {
+    border-bottom: none;
+  }
+  
+  .apiName {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .apiUrl {
+    color: #3498db;
+    font-family: monospace;
+    word-break: break-all;
+  }
+  
+  .apiPermission {
+    color: #666;
+  }
+  
+  .apiStatus {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    display: inline-block;
+  }
+  
+  .apiStatus.active {
+    background-color: #e6f7e6;
+    color: #4caf50;
+  }
+  
+  .apiStatus.inactive {
+    background-color: #ffebee;
+    color: #f44336;
+  }
+  
+  .apiAction {
+    text-align: center;
+  }
+  
+  .toggleButton {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .toggleButton.active {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .toggleButton.inactive {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .toggleButton:hover {
+    opacity: 0.9;
+  }
+  
+  /* Loading indicator */
+  .loading {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+  }
+  
+  /* Pagination Styles - Matching BranchLovDialog */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+  
+  .iconButton {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .iconButton:not(:disabled) {
+    background-color: #007bff;
+  }
+  
+  .iconButton:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+  }
+  
+  .paginationIcon {
+    font-size: 18px;
+    line-height: 1;
+    
+  }
+
+  /* LOV Dialog Styles */
+.lovDialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lovDialogContent {
+  background-color: white;
+  border-radius: 4px;
+  padding: 20px;
+  width: 500px;
+  max-width: 90%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lovDialogHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  color: #666;
+}
+
+.lovSearchBox {
+  margin-bottom: 15px;
+}
+
+.lovSearchInput {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.lovListContainer {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
+
+.lovListHeader {
+  background-color: #f0f0f0;
+  padding: 8px;
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+}
+
+.lovListBody {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.lovListItem {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.lovListItem:hover {
+  background-color: #f9f9f9;
+}
+
+.lovPagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.lovInputWrapper {
+  display: flex;
+  margin-right: 10px;
+}
+
+.lovInput {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.lovButton {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 0 8px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}

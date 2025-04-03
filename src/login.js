@@ -3,6 +3,7 @@ import './login.css';
 import { data } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+
 const Login = () => {
 //   const [username, setusername] = useState("");
 //   const [password, setPassword] = useState("");
@@ -34,12 +35,17 @@ const Login = () => {
   };
   
   let userid='';
+  // const API_BASE_URL = window.runtimeConfig?.API_BASE_URL || "/v2";
+  const BASE_URL = window.runtimeConfig?.API_BASE_URL || "/v2";
+  
 const handleSubmit = async (e) => {
     
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
     try {
-      const response = await fetch("http://localhost:8182/v2/login", {
+      // http://localhost:8182/loginv2-0.0.1-SNAPSHOT/v2
+      console.log("Base Url------"+BASE_URL);
+      const response = await fetch(`${BASE_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

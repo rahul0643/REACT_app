@@ -1,0 +1,131 @@
+/* UserMasterDialog.css */
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dialog-content {
+  animation: dialogFadeIn 0.3s;
+  max-width: 90%;
+  max-height: 100%;
+  overflow: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+@keyframes dialogFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-container {
+  background-color: #f0f8ff;
+  width: 800px;
+  max-width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.form-header {
+  background-color: #0066cc;
+  color: white;
+  padding: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.table-container {
+  border: 1px solid #99ccff;
+  padding: 10px;
+  margin: 10px;
+  background-color: white;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  max-height: 60vh;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th {
+  background-color: #e6f2ff;
+  border: 1px solid #99ccff;
+  padding: 8px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.user-table td {
+  border: 1px solid #99ccff;
+  padding: 5px;
+}
+
+.user-table input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+.checkbox-cell {
+  text-align: center;
+  width:40%;
+}
+
+.checkbox-cell input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+  padding: 0 10px;
+}
+
+.action-button {
+  background-color: #0066cc;
+  color: white;
+  padding: 6px 16px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  min-width: 80px;
+}
+
+.action-button:hover {
+  background-color: #004c99;
+}
+
+/* Add some responsive styling */
+@media screen and (max-width: 600px) {
+  .form-container {
+    width: 95%;
+  }
+  
+  .button-group {
+    flex-wrap: wrap;
+  }
+  
+  .action-button {
+    flex: 1;
+    min-width: 70px;
+    margin-bottom: 5px;
+  }
+}
